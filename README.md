@@ -1,18 +1,22 @@
 # Space Tycoon
 
-Protótipo mobile offline de um tycoon de mineração marciana, agora organizado em torno de uma mina vertical: poços, trabalhadores, elevador, cadeia de produção e decisões de gerente. A direção visual usa ilustração original de Marte, tons de ferrugem e papel, hierarquia editorial e uma mina animada em corte — uma referência de gênero, não uma cópia de interface ou assets de outro jogo.
+Protótipo mobile offline de um tycoon de mineração marciana com uma direção visual cartoon autoral. A interface foi redesenhada para parecer um jogo de estúdio: a mina é uma cena viva, os personagens têm retratos próprios, os botões têm peso físico e as decisões aparecem em balões de fala e pequenas histórias de turno.
 
-## O que mudou
+## Direção de arte
 
-A tela principal deixou de ser um dashboard genérico e passou a ser a operação visual da mina. O jogador acompanha o elevador, vê os cinco níveis do corte, contrata a equipe do poço e decide entre melhorar perfuração ou expandir o elevador. As telas seguintes separam gerência, mercado, ranking e notícias. O loop continua offline, com produção durante a ausência, mas agora a intervenção principal é alocar capital no gargalo certo.
+A versão atual não usa emojis, ícones prontos nem imagens externas na interface. A mina, o elevador, os poços, os personagens, os ícones de navegação e a tela de abertura são desenhados diretamente em Canvas 2D. O estilo usa contornos escuros, cores de papel, coral, azul-petróleo e amarelo, com proporções exageradas e pequenas imperfeições deliberadas para afastar a aparência de dashboard gerado automaticamente.
 
-O APK inclui quatro placares: global por dinheiro, Brasil por dinheiro, global por tempo de jogo e Brasil por tempo de jogo. Sem conexão, o jogo exibe o último placar conhecido/seed local. Para placar compartilhado entre jogadores, há uma API Node em `server/index.js` e uma migração Supabase em `supabase/migrations/0001_rankings.sql`; o projeto Supabase disponível nesta sessão está inativo, então a sincronização pública precisa ser ativada/deployada antes de virar um serviço permanente.
+Os nomes padrão foram substituídos por nomes inteiramente fictícios: **Red Mountains**, **Rask & Coil**, **Dusthaven**, **Nox Calder**, **Mara Quill**, **Pip Dorne**, **Odo Venn** e **Sia Morrow**. Também troquei referências de data por uma contagem diegética de turnos e sóis.
 
-## Build
+## Experiência atual
+
+A tela Mina mostra a operação em corte, trabalhadores no poço, fila de minério e o elevador. Gerência apresenta quatro personagens com especializações diferentes. Mercado controla o despacho de carga. Placar conserva as quatro categorias de ranking. Mural registra eventos narrativos curtos. O jogo continua offline e salva o progresso localmente.
+
+## Build do APK
 
 ```bash
 export ANDROID_SDK_ROOT=/home/ubuntu/android-sdk
 ./gradlew assembleDebug --no-daemon
 ```
 
-O APK fica em `app/build/outputs/apk/debug/app-debug.apk`. A capa original está em `assets/space-tycoon-cover.png`, também embarcada em `www/cover.png` e no APK.
+O APK fica em `app/build/outputs/apk/debug/app-debug.apk`.
