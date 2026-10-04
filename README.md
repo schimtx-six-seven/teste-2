@@ -1,16 +1,20 @@
 # Space Tycoon
 
-Protótipo mobile offline de um tycoon de mineração marciana com arte cartoon autoral em Canvas 2D.
+Protótipo mobile offline de um tycoon de mineração marciana com arte cartoon autoral em Canvas 2D e corte isométrico pseudo-3D.
 
-## Novidades da versão atual
+## Versão pseudo-3D
 
-Ao abrir o jogo, o jogador encontra um painel inicial com **Jogar**, **Tutorial** e **Configurações**. O tutorial explica o fluxo da mina antes do primeiro turno. As configurações permitem ligar ou desligar música e efeitos sonoros.
+A cena principal agora é renderizada em alta resolução no Canvas e reduzida para a tela do celular. O desenho usa projeção isométrica falsa com planos de túnel, cubos com três faces, elevador com volume, plataformas em profundidade, trabalhadores em perspectiva, sombras elípticas e personagem com cabeça, corpo, capacete e rótulo próprios. Não é um modelo 3D real, mas cria a sensação de profundidade mantendo o jogo offline, leve para processar e controlável por toque.
 
-O jogador agora é uma personagem dentro da cena. A posição é desenhada no Canvas e pode ser alterada pelos quatro controles da mina, pelas setas do teclado quando executado no navegador ou tocando diretamente no local desejado da cena. A estação amarela de equipe fica no canto inferior esquerdo do corte. O botão de contratação só é liberado quando a personagem chega até esse setor; contratar deixou de ser uma ação abstrata de painel.
+A personagem pode ser movida pelos quatro controles, pelas setas do teclado ou tocando no túnel. A estação de equipe fica em uma plataforma amarela e a contratação só é possível quando a personagem chega fisicamente até ela.
 
-A música é uma trilha procedural original em loop, criada com Web Audio para não depender de uma faixa externa. Ela usa uma sequência leve de marimba sintetizada, baixo e pulsos triangulares, com volume discreto para um jogo idle. O efeito de clique é um asset de áudio original (`www/ui-click.mp3`) reproduzido nos botões e movimentos.
+## Conteúdo offline
 
-Os nomes padrão continuam inteiramente fictícios: **Red Mountains**, **Rask & Coil**, **Dusthaven**, **Nox Calder**, **Mara Quill**, **Pip Dorne**, **Odo Venn** e **Sia Morrow**.
+O APK inclui `mars_visual_cache.bin`, um pacote local determinístico de dados de expansão visual com 110 MiB. Ele mantém o aplicativo dentro da faixa solicitada de 100 MB a 600 MB e reserva espaço para a expansão de texturas e variações visuais sem downloads obrigatórios. A versão atual não precisa acessar internet para renderizar a mina.
+
+## Áudio
+
+A trilha continua sendo procedural e original em Web Audio, em loop, com volume discreto. O efeito de confirmação `www/ui-click.mp3` está embarcado nos assets do Android.
 
 ## Build do APK
 
