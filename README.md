@@ -1,16 +1,16 @@
 # Space Tycoon
 
-Protótipo mobile offline de um tycoon de mineração marciana com uma direção visual cartoon autoral. A interface foi redesenhada para parecer um jogo de estúdio: a mina é uma cena viva, os personagens têm retratos próprios, os botões têm peso físico e as decisões aparecem em balões de fala e pequenas histórias de turno.
+Protótipo mobile offline de um tycoon de mineração marciana com arte cartoon autoral em Canvas 2D.
 
-## Direção de arte
+## Novidades da versão atual
 
-A versão atual não usa emojis, ícones prontos nem imagens externas na interface. A mina, o elevador, os poços, os personagens, os ícones de navegação e a tela de abertura são desenhados diretamente em Canvas 2D. O estilo usa contornos escuros, cores de papel, coral, azul-petróleo e amarelo, com proporções exageradas e pequenas imperfeições deliberadas para afastar a aparência de dashboard gerado automaticamente.
+Ao abrir o jogo, o jogador encontra um painel inicial com **Jogar**, **Tutorial** e **Configurações**. O tutorial explica o fluxo da mina antes do primeiro turno. As configurações permitem ligar ou desligar música e efeitos sonoros.
 
-Os nomes padrão foram substituídos por nomes inteiramente fictícios: **Red Mountains**, **Rask & Coil**, **Dusthaven**, **Nox Calder**, **Mara Quill**, **Pip Dorne**, **Odo Venn** e **Sia Morrow**. Também troquei referências de data por uma contagem diegética de turnos e sóis.
+O jogador agora é uma personagem dentro da cena. A posição é desenhada no Canvas e pode ser alterada pelos quatro controles da mina, pelas setas do teclado quando executado no navegador ou tocando diretamente no local desejado da cena. A estação amarela de equipe fica no canto inferior esquerdo do corte. O botão de contratação só é liberado quando a personagem chega até esse setor; contratar deixou de ser uma ação abstrata de painel.
 
-## Experiência atual
+A música é uma trilha procedural original em loop, criada com Web Audio para não depender de uma faixa externa. Ela usa uma sequência leve de marimba sintetizada, baixo e pulsos triangulares, com volume discreto para um jogo idle. O efeito de clique é um asset de áudio original (`www/ui-click.mp3`) reproduzido nos botões e movimentos.
 
-A tela Mina mostra a operação em corte, trabalhadores no poço, fila de minério e o elevador. Gerência apresenta quatro personagens com especializações diferentes. Mercado controla o despacho de carga. Placar conserva as quatro categorias de ranking. Mural registra eventos narrativos curtos. O jogo continua offline e salva o progresso localmente.
+Os nomes padrão continuam inteiramente fictícios: **Red Mountains**, **Rask & Coil**, **Dusthaven**, **Nox Calder**, **Mara Quill**, **Pip Dorne**, **Odo Venn** e **Sia Morrow**.
 
 ## Build do APK
 
