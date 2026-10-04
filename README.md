@@ -1,35 +1,18 @@
 # Space Tycoon
 
-Protótipo jogável mobile offline de um tycoon de colonização de Marte.
+Protótipo mobile offline de um tycoon de mineração marciana, agora organizado em torno de uma mina vertical: poços, trabalhadores, elevador, cadeia de produção e decisões de gerente. A direção visual usa ilustração original de Marte, tons de ferrugem e papel, hierarquia editorial e uma mina animada em corte — uma referência de gênero, não uma cópia de interface ou assets de outro jogo.
 
-## Loop implementado
+## O que mudou
 
-- criação local do jogador, empresa e colônia;
-- mineração de ferro em tempo real;
-- trabalhadores e contratação progressiva;
-- ciclo de produção offline com limite de 8 horas;
-- fundição e gargalo de processamento;
-- venda de ferro processado para a Terra;
-- upgrades de mina e fundição;
-- mercado com preço simulado;
-- notícias e primeiro marco de lore;
-- salvamento automático em `localStorage`;
-- contêiner Android nativo com WebView, sem necessidade de internet para jogar.
+A tela principal deixou de ser um dashboard genérico e passou a ser a operação visual da mina. O jogador acompanha o elevador, vê os cinco níveis do corte, contrata a equipe do poço e decide entre melhorar perfuração ou expandir o elevador. As telas seguintes separam gerência, mercado, ranking e notícias. O loop continua offline, com produção durante a ausência, mas agora a intervenção principal é alocar capital no gargalo certo.
 
-## Arquivos principais
+O APK inclui quatro placares: global por dinheiro, Brasil por dinheiro, global por tempo de jogo e Brasil por tempo de jogo. Sem conexão, o jogo exibe o último placar conhecido/seed local. Para placar compartilhado entre jogadores, há uma API Node em `server/index.js` e uma migração Supabase em `supabase/migrations/0001_rankings.sql`; o projeto Supabase disponível nesta sessão está inativo, então a sincronização pública precisa ser ativada/deployada antes de virar um serviço permanente.
 
-- `www/index.html`: jogo mobile completo em HTML, CSS e JavaScript;
-- `app/src/main/assets/index.html`: cópia embarcada no APK;
-- `app/src/main/java/com/space/tycoon/MainActivity.java`: contêiner Android;
-- `app/build.gradle`: configuração do aplicativo.
-
-## Build do APK
+## Build
 
 ```bash
 export ANDROID_SDK_ROOT=/home/ubuntu/android-sdk
 ./gradlew assembleDebug --no-daemon
 ```
 
-O APK de debug fica em `app/build/outputs/apk/debug/app-debug.apk`.
-
-> Este é um primeiro protótipo funcional. O ranking online, robôs, automação, concorrentes e expansão pelo Sistema Solar ficam preparados para as próximas iterações.
+O APK fica em `app/build/outputs/apk/debug/app-debug.apk`. A capa original está em `assets/space-tycoon-cover.png`, também embarcada em `www/cover.png` e no APK.
